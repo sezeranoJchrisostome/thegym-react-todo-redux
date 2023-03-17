@@ -1,5 +1,5 @@
 import "./App.css";
-import Todo from "./components/Todo";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <h1 className="text-gray-500 text-opacity-30 font-bold text-9xl text-center">
           todos
         </h1>
-        <Todo />
+        <TodoForm />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTodo, markTodo } from "../features/todo/todoSlice";
+import { deleteTodo, editTodo } from "../features/todo/todoSlice";
 
 export default function TodoList({ setTodo }) {
   const todoList = useSelector((state) => state.todo);
@@ -18,7 +18,7 @@ export default function TodoList({ setTodo }) {
               <input
                 type="checkbox"
                 checked={value.done}
-                onClick={() => dispatch(markTodo({ id: value.id }))}
+                onClick={() => dispatch(editTodo({ ...value, done: !value.done }))}
               />
               <div
                 className={`text-base font-medium text-gray-600 ${
